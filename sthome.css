@@ -1,0 +1,242 @@
+@font-face {
+  font-family: 'PP Editorial New';
+  src: url('fonts/PPEditorialNew-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PP Editorial New';
+  src: url('fonts/PPEditorialNew-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('fonts/PPNeueMontreal-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('fonts/PPNeueMontreal-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+:root {
+  --font-editorial: 'PP Editorial New', serif;
+  --font-ui: 'PP Neue Montreal', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: var(--font-ui);
+  min-height: 100vh;
+}
+
+.nav {
+  width: 100%;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 24px 48px;   
+  font-family: 'PP Neue Montreal', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+.nav-left {
+  flex-shrink: 0;
+  color: white;
+}
+
+.nav-left a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-right {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-right a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-right a:hover {
+  opacity: 1;
+}
+
+
+.hero-wrapper {
+  padding: 0 48px 48px; 
+}
+
+.hero-card {
+  position: relative;
+  width: 100%;
+  height: 72vh;              
+  min-height: 620px;
+
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid #811615;
+}
+
+.hero-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 72px;
+  left: 72px;
+  max-width: 640px;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-family: var(--font-editorial);
+  font-weight: 400;
+  font-size: 3.4rem;
+  line-height: 1.25;
+}
+
+.hero-content span {
+  font-style: italic;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 28px;
+  background: #fff;
+  color: #000;
+  padding: 16px 28px;
+
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.cta:hover {
+  background: #e6e6e6;
+}
+
+/* =========================
+   MOBILE NAV
+========================= */
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: #000;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+.mobile-menu a {
+  padding: 18px 24px;
+  color: white;
+  text-decoration: none;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mobile-menu a:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+/* =========================
+   RESPONSIVE BREAKPOINT
+========================= */
+@media (max-width: 768px) {
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-inner {
+    padding: 20px 24px;
+  }
+
+  .hero-wrapper {
+    padding: 0 24px 24px;
+  }
+
+  .hero-content {
+    left: 24px;
+    bottom: 48px;
+    max-width: 90%;
+  }
+
+  .hero-content h1 {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .hero-content {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 56px;
+
+    max-width: 320px;  
+    width: 80%;
+
+    text-align: left;  
+  }
+
+  .hero-content h1 {
+    font-size: 2.3rem;
+    line-height: 1.2;
+  }
+
+  .cta {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

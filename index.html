@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Stranger Things Ranker</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="nav-left">
+        <a href="sthome.html">STRANGER THINGS RANKING</a>
+      </div>
+
+      <!-- DESKTOP LINKS -->
+      <div class="nav-right desktop-nav">
+      </div>
+    </div>
+
+  </nav>
+
+  <!-- HERO WRAPPER -->
+  <main class="hero-wrapper">
+
+    <section class="hero-card">
+      <img src="st2background.png" alt="Upside Down Forest" />
+
+      <div class="hero-content">
+        <div id="comparison-container">
+
+          <!-- CARD A -->
+          <div class="episode-card" id="card-a" onclick="vote('a')">
+            <img class="episode-image" alt="" />
+            <div class="episode-info">
+              <h2 class="episode-heading"></h2>
+              <p class="episode-description"></p>
+            </div>
+          </div>
+
+          <div class="vs">VS</div>
+
+          <!-- CARD B -->
+          <div class="episode-card" id="card-b" onclick="vote('b')">
+            <img class="episode-image" alt="" />
+            <div class="episode-info">
+              <h2 class="episode-heading"></h2>
+              <p class="episode-description"></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS PANEL (UNCHANGED) -->
+    <section id="results-panel" style="display:none;">
+
+      <header class="ranking-header">
+        <h1>Stranger Things Ranking</h1>
+        <p>Your ranked episodes</p>
+      </header>
+
+      <div class="ranking-hero">
+        <img src="stbackground.png" alt="Vecna Banner" />
+      </div>
+
+      <section class="ranking-table">
+        <div class="table-header">
+          <span>Rank</span>
+          <span>Name</span>
+          <span>Season</span>
+          <span>Episode</span>
+          <span>Runtime</span>
+          <span>Episode Release Date</span>
+        </div>
+
+        <div id="ranking-rows"></div>
+      </section>
+
+    </section>
+
+  </main>
+
+  <script>
+
+
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("open");
+    });
+  </script>
+
+  <script src="episodes.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
